@@ -1,0 +1,13 @@
+services:
+  crud_app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - DATABASE_URL=sqlite:./data/todo.db
+    volumes:
+      - ./src:/app/src
